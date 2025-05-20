@@ -16,3 +16,16 @@
 
 [9:31 AM] Failed to create quest profile...
 [9:31 AM] WoWEvenPlaysWoW has stopped
+
+1:09 PM] WoWEvenPlaysWoW has started
+[1:09 PM] Exception:  -- internal --
+ at [L] QuestProfileCompile2(LuaTable _G) line QuestProfileCompile.lua:1:1
+
+[1:09 PM] Allowed fails 1/4
+[1:09 PM] Expception: Can not call nil value.
+[1:09 PM] Expception:  -- internal --
+ at [L] QuestProfileCompile2(LuaTable _G) line QuestProfileCompile.lua:1:1
+
+[1:09 PM] Failed to create quest profile...
+[1:09 PM] WoWEvenPlaysWoW has stopped
+[1:09 PM] Last loaded profile saved to config...
