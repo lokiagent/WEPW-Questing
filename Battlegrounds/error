@@ -1,0 +1,18 @@
+[9:31 AM] [Warden] read all process scans...
+[9:31 AM] Basic keybind check passed!
+[9:31 AM] WoWEvenPlaysWoW has started
+[9:31 AM] [Plugin] Queuing for Battleground
+[9:31 AM] Exception:  -- internal --
+ at [L] handleQueueState(Closure) line QuestProfileCompile.lua:105:13
+ -- internal --
+ at [L] QuestProfileCompile(LuaTable _G) line QuestProfileCompile.lua:124:1
+
+[9:31 AM] Allowed fails 1/4
+[9:31 AM] Expception: Can not call nil value.
+[9:31 AM] Expception:  -- internal --
+ at [L] handleQueueState(Closure) line QuestProfileCompile.lua:105:13
+ -- internal --
+ at [L] QuestProfileCompile(LuaTable _G) line QuestProfileCompile.lua:124:1
+
+[9:31 AM] Failed to create quest profile...
+[9:31 AM] WoWEvenPlaysWoW has stopped
