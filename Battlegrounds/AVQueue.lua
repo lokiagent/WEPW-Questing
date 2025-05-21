@@ -13,7 +13,7 @@ Whitewhisker = {11605, 11604, 11603, 10982} --Whitewhisker Gnolls
 Irondeep = {11602, 11600, 10987} --Irondeep Troggs
 
 -- Choose targets from the list above
-npcIDs = TableToList(AllianceNPCs)
+npcIDs = TableToList(Vanndar)
 
 -- List Battleground Masters and their IDs
 StormwindBattleMasterID = 7410
@@ -53,13 +53,28 @@ function Override()
         RunLua("/click WorldStateScoreFrameLeaveButton")
         return false
     end
-
     if UnitHasAura(Player, "Ghost", false) or UnitHasAura(Player, "Preparation") then
-        StopMoving()
-        Log("Player is dead or in Pre-Match preparation, stopping movement for 15 seconds.")
-        SleepPlugin(15000)
+        return false
+    end
+    if GetAreaID() ~= 1459 then
+        return false
     end
     return true
+end
+function DeadBot()
+    Log("Player is dead or in Pre-Match preparation")
+    while UnitHasAura(Player, "Ghost", false) do
+        StopMoving()
+    end
+    while  UnitHasAura(Player, "Preparation") do
+        local HordeMainGate = {-868.0319, -562.9142, 57.14179}
+        local AllianceMainGate = {0,0,0}
+        if Faction == "Alliance" then
+            QuestGoToPoint(AllianceMainGate[1],AllianceMainGate[2],AllianceMainGate[3], false, true)
+        else
+            QuestGoToPoint(HordeMainGate[1],HordeMainGate[2],HordeMainGate[3], false, true)
+        end
+    end
 end
 
 -- Handle queue states
@@ -70,6 +85,8 @@ local function handleQueueState()
         SetBOTState("Deserter")
         Log("You have the Deserter debuff, you cannot enter a battleground.")
         SleepPlugin(10000)
+    elseif UnitHasAura(Player, "Ghost", false) or UnitHasAura(Player, "Preparation") then
+        DeadBot()
     elseif state == 4 or state == "Active" then
         SetBOTState("InBattleground")
         Log("In battleground, starting grind")
@@ -88,9 +105,9 @@ local function handleQueueState()
         SleepPlugin(1000)
     elseif state == 0 or state == "None" then
         SetBOTState("NotInQue")
-        if HasItem("Alterac Valley Mark of Honor") >= 3 then
+        while HasItem("Alterac Valley Mark of Honor") >= 3 do
             Log("You have at least 3 Alterac Valley Mark of Honor, turning in quest.")
-            TurnInQuestUsingDB(HasPlayerFinishedQuest(8369) and 8387 or 8369)
+            TurnInQuestUsingDB(8369)
         end
         Log("Queuing for Battleground")
         QuestGoToPoint(AVBMFloat[1], AVBMFloat[2], AVBMFloat[3], false, true)
