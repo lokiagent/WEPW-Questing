@@ -63,22 +63,20 @@ AVBMFloat = getBattleMasterLocation()
 
 -- Override function
 function Override()
-    if IsPvpComplete() == true then
-        RunLua("/click WorldStateScoreFrameLeaveButton")
+    if IsPvpComplete() == true 
+        or UnitHasAura(Player, "Ghost", false) 
+        or UnitHasAura(Player, "Preparation")
+        or GetAreaID() ~= 1459
+        then
         return false
     end
     if Player:InCombat() == false and Player:IsMounted() == false then
         UseMacro("MountMe")
         return true
     end
-    if UnitHasAura(Player, "Ghost", false) or UnitHasAura(Player, "Preparation") then
-        return false
-    end
-    if GetAreaID() ~= 1459 then
-        return false
-    end
     return true
 end
+
 function DeadBot()
     Log("Player is dead or in Pre-Match preparation")
     while UnitHasAura(Player, "Ghost", false) do
@@ -215,7 +213,13 @@ local function handleQueueState()
         end
     end
 end
-
+function LeaveBG()
+    if IsPvpComplete == true then
+        RunLua("/click WorldStateScoreFrameLeaveButton")
+    end
+end
 -- Start handling queue state
+
 MarkTurnIn()
 handleQueueState()
+LeaveBG()
