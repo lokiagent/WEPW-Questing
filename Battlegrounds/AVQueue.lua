@@ -46,7 +46,7 @@ Faction = Player:IsAlliance() and "Alliance" or "Horde"
 local function assignBattleMaster()
     if Faction == "Horde" then
         return OrgrimmarBattleMasterID, OrgrimmarBattleMaster
-    else Faction == "Alliance" then
+    else
         return StormwindBattleMasterID, StormwindBattleMaster
     end
 end
