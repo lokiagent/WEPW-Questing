@@ -16,10 +16,10 @@ BlackListPoint(-243.0898,-456.5438,29.23934,20)
 BlackListPoint(-106.7262,-454.3309,26.44338,20)
 BlackListPoint(-82.4838,-416.7098,18.41362,20)
 BlackListPoint(-112.7868,-489.7389,32.08698,20)
-BlackListPoint(307.8606,-400.1205,11.02554)
-BlackListPoint(644.9474,-357.7662,50.44614)
-BlackListPoint(650.5125,-354.4058,33.13669)
-BlackListPoint(654.9985,-355.9453,31.15319)
+BlackListPoint(307.8606,-400.1205,11.02554,20)
+BlackListPoint(644.9474,-357.7662,50.44614,20)
+BlackListPoint(650.5125,-354.4058,33.13669,20)
+BlackListPoint(654.9985,-355.9453,31.15319,20)
 -- Target options:
 Drek = {11946} --Drek'Thar
 Vanndar = {11948} --Vanndar Stormpike
@@ -46,11 +46,8 @@ Faction = Player:IsAlliance() and "Alliance" or "Horde"
 local function assignBattleMaster()
     if Faction == "Horde" then
         return OrgrimmarBattleMasterID, OrgrimmarBattleMaster
-    elseif Faction == "Alliance" then
+    else Faction == "Alliance" then
         return StormwindBattleMasterID, StormwindBattleMaster
-    else
-        Log("Error: Invalid faction configuration.")
-        return nil, nil
     end
 end
 
@@ -70,7 +67,7 @@ function Override()
         RunLua("/click WorldStateScoreFrameLeaveButton")
         return false
     end
-    if Player:In combat() == false and Player:IsMounted() == false then
+    if Player:InCombat() == false and Player:IsMounted() == false then
         UseMacro("MountMe")
         return true
     end
@@ -87,7 +84,9 @@ function DeadBot()
     while UnitHasAura(Player, "Ghost", false) do
         StopMoving()
     end 
-    UseMacro("MountMe")
+    if Player:IsMounted() == false then
+        UseMacro("MountMe")
+    end
 end
 function PreMatchPrep()
     Log("Player is in Pre-Match preparation")
@@ -118,23 +117,23 @@ function MarkTurnIn()
         else
             local MarkofHonor = 8387
             local MarkofHonorName = "Horde Warbringer"
-        end
+        end --faction check
         while ItemCount("Alterac Valley Mark of Honor") >= 3 do
             if Faction == "Horde" then
                 QuestGoToPoint(1971.815, -4793.429, 56.76123, false, true)
                 QuestGoToPoint(1970.817, -4801.953, 56.76451, false, true)
                 QuestGoToPoint(1980.079, -4809.797, 56.76451, false, true)
-            end
-            Log("You have at least 3 Alterac Valley Mark of Honor, turning in quest.")
-            foreach unit in unitslist do
-                if unit:Name() == "Horde Warbringer" then
-                    FindMeshPathToUnit(unit)
-                    Path()
-                    TargetUnit(unit)
-                    InteractWithUnit(unit)
-                    SleepPlugin(2000)
-                end
-            end
+                Log("You have at least 3 Alterac Valley Mark of Honor, turning in quest.")
+                foreach unit in unitslist do
+                    if unit:Name() == "Horde Warbringer" then
+                        FindMeshPathToUnit(unit)
+                        Path()
+                        TargetUnit(unit)
+                        InteractWithUnit(unit)
+                        SleepPlugin(2000)
+                    end -- turn in
+                end -- foreach
+            end -- if horde
             if Faction == "Horde" then
                 QuestGoToPoint(1980.079, -4809.797, 56.76451, false, true)
                 QuestGoToPoint(1970.817, -4801.953, 56.76451, false, true)
@@ -144,20 +143,20 @@ function MarkTurnIn()
                 QuestGoToPoint(-8440.335,312.7079,120.8858, false, true)
                 QuestGoToPoint(-8443.32,314.2846,120.8858, false, true)
                 QuestGoToPoint(-8441.301,314.1023,120.8858 false, true)
-            end
-            Log("You have at least 3 Alterac Valley Mark of Honor, turning in quest.")
-            foreach unit in unitslist do
-                if unit:Name() == "Alliance Brigadier General" then
-                    FindMeshPathToUnit(unit)
-                    Path()
-                    TargetUnit(unit)
-                    InteractWithUnit(unit)
-                    SleepPlugin(2000)
-                end
-            end
-        end
-    end
-end
+                Log("You have at least 3 Alterac Valley Mark of Honor, turning in quest.")
+                foreach unit in unitslist do
+                    if unit:Name() == "Alliance Brigadier General" then
+                        FindMeshPathToUnit(unit)
+                        Path()
+                        TargetUnit(unit)
+                        InteractWithUnit(unit)
+                        SleepPlugin(2000)
+                    end -- turn in
+                end -- foreach
+            end -- faction check
+        end -- while
+    end -- if areaid
+end -- function
 
 -- Handle queue states
 local function handleQueueState()
