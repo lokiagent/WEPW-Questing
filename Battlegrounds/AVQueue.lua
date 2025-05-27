@@ -63,11 +63,10 @@ AVBMFloat = getBattleMasterLocation()
 
 -- Override function
 function Override()
-    if IsPvpComplete() == true 
-        or UnitHasAura(Player, "Ghost", false) 
-        or UnitHasAura(Player, "Preparation")
-        or GetAreaID() ~= 1459
-        then
+    if IsPvpComplete() == true or
+       UnitHasAura(Player, "Ghost", false) or
+       UnitHasAura(Player, "Preparation") or
+       GetAreaID() ~= 1459 then
         return false
     end
     if Player:InCombat() == false 
@@ -140,7 +139,7 @@ function MarkTurnIn()
                 QuestGoToPoint(-8440.335,312.7079,120.8858, false, true)
                 QuestGoToPoint(-8443.32,314.2846,120.8858, false, true)
                 QuestGoToPoint(-8441.301,314.1023,120.8858 false, true)
-                Log("You have at least 3 Alterac Valley Mark of Honor, turning in quest.")
+                QuestGoToPoint(-8441.301,314.1023,120.8858, false, true)
                 foreach unit in unitslist do
                     if unit:Name() == "Alliance Brigadier General" then
                         FindMeshPathToUnit(unit)
@@ -213,7 +212,7 @@ local function handleQueueState()
     end
 end
 function LeaveBG()
-    if IsPvpComplete == true then
+    if IsPvpComplete() == true then
         RunLua("/click WorldStateScoreFrameLeaveButton")
     end
 end
