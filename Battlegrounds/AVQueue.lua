@@ -24,7 +24,7 @@ BlackListPoint(654.9985,-355.9453,31.15319,20)
 Drek = {11946} --Drek'Thar
 Vanndar = {11948} --Vanndar Stormpike
 HordeNPCs = {12097, 10367, 13536, 13329, 13542, 13359, 13543, 13538, 13332, 12053, 10364, 12052, 14185, 13089} --Horde NPCs
-AllianceNPCs = {13816, 12096, 12997, 13358, 13096, 5135, 14041, 5134, 13018, 14187, 13086, 13552, 12050, 13551}
+AllianceNPCs = {13816, 12096, 12997, 13358, 13096, 5135, 14041, 5134, 13018, 14187, 13086, 13552, 12050, 13551} --Alliance NPCs
 Wildpaw = {11838, 11839, 11837, 10991, 11840, 11677} --Wildpaw Gnolls
 Snowblind = {11675, 10986, 11678} --Snowblind Harpies
 Whitewhisker = {11605, 11604, 11603, 10982} --Whitewhisker Gnolls
@@ -70,21 +70,20 @@ function Override()
         then
         return false
     end
-    if Player:InCombat() == false and Player:IsMounted() == false then
+    if Player:InCombat() == false 
+    and Player:IsMounted() == false 
+    and GetCurrentPathSize() > 5 
+    and GetTargetUnit() == nil then
         UseMacro("MountMe")
-        return true
     end
     return true
 end
 
 function DeadBot()
-    Log("Player is dead or in Pre-Match preparation")
+    Log("Player is dead.")
     while UnitHasAura(Player, "Ghost", false) do
         StopMoving()
     end 
-    if Player:IsMounted() == false then
-        UseMacro("MountMe")
-    end
 end
 function PreMatchPrep()
     Log("Player is in Pre-Match preparation")
