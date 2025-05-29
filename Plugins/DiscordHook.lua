@@ -6,7 +6,7 @@ Player = GetPlayer();
 -- Define the discordWebhook module
 local discordWebhook = {}
 -- Set the URL and avatar
-local url = "<Discord webhook URL here>"
+local url = "<Discord Webhook URL"
 local avatar = "https://img.freepik.com/free-vector/capybara-love-logo_7688-559.jpg"
 
 function discordWebhook.setURL(value)
@@ -293,40 +293,84 @@ Invoke-RestMethod -Uri $webHookUrl -Body ($payload | ConvertTo-Json -Depth 4) -M
     os.execute("powershell.exe -ExecutionPolicy Bypass -File log.ps1")
 end
 
-local str = (
-    discordWebhook.createBody({
-        username = GetWEPWUser(),
-        content = ("Current Player: %s, Level: %d"):format(Player.Name, Player.Level),
-        embed = discordWebhook.createEmbed({
-            title = "Current BOT State",
-            description = "The Bot is currently in the state: " .. GetBOTState(),
-            color = 0x00FF00, -- Green color
-            timestamp = discordWebhook.timestamp(os.time()),
+function sendDiscordStatus()
+    if GetPlayer().PlayerFlag == "Afk" then
+        str = discordWebhook.createBody({
+            username = GetWEPWUser(),
+            content = ("Player %s is currently AFK. Level: %d"):format(Player.Name, Player.Level),
+            embed = discordWebhook.createEmbed({
+                title = "AFK Status",
+                description = "The player is currently AFK.",
+                color = 0xFF0000, -- Red color
+                timestamp = discordWebhook.timestamp(os.time()),
+            })
         })
-    })
-)
-if FreeBagSpace() < 3 then
-    str = discordWebhook.createBody({
-        username = GetWEPWUser(),
-        content = "The Bot has less than 3 free bag slots.",
-        embed = discordWebhook.createEmbed({
-            title = "Inventory Status",
-            description = "The Bot has less than 3 free bag slots.",
-            color = 0xFFFF00, -- Yellow color
-            timestamp = discordWebhook.timestamp(os.time()),
+    end
+    if Player.PlayerFlag == "PlayedTooLong" or Player.PlayerFlag == "PlayedLongTime" then
+        str = discordWebhook.createBody({
+            username = GetWEPWUser(),
+            content = ("Player %s has played for too long. Level: %d"):format(Player.Name, Player.Level),
+            embed = discordWebhook.createEmbed({
+                title = "Played Too Long Status",
+                description = "The player has played for too long.",
+                color = 0xFF0000, -- Red color
+                timestamp = discordWebhook.timestamp(os.time()),
+            })
         })
-    })
+    end
+    -- Only send the default message every 10 minutes
+    if  minutes > 10 then
+        str = discordWebhook.createBody({
+            username = GetWEPWUser(),
+            content = ("Current Player: %s, Level: %d"):format(Player.Name, Player.Level),
+            embed = discordWebhook.createEmbed({
+                title = "Current BOT State",
+                description = "The Bot is currently in the state: " .. GetBOTState(),
+                color = 0x00FF00, -- Green color
+                timestamp = discordWebhook.timestamp(now),
+            })
+        })
+        minutes = 0
+    end
+
+    -- Always check and send bag space warning if needed
+    if FreeBagSpace() < 3 then
+        str = discordWebhook.createBody({
+            username = GetWEPWUser(),
+            content = "The Bot has less than 3 free bag slots.",
+            embed = discordWebhook.createEmbed({
+                title = "Inventory Status",
+                description = "The Bot has less than 3 free bag slots.",
+                color = 0xFFFF00, -- Yellow color
+                timestamp = discordWebhook.timestamp(now),
+            })
+        })
+    end
+
+    -- Always check and send stuck warning if needed
+    if GetStuckTime() > 1000 then
+        str = discordWebhook.createBody({
+            username = GetWEPWUser(),
+            content = "The Bot has been stuck for more than 1000 milliseconds.",
+            embed = discordWebhook.createEmbed({
+                title = "Stuck Status",
+                description = "The Bot has been stuck for more than 1000 milliseconds.",
+                color = 0xFFA500, -- Orange color
+                timestamp = discordWebhook.timestamp(now),
+            })
+        })
+    end
+
+    -- Only send if str is set (i.e., a message needs to be sent)
+    if str then
+        discordWebhook.send(url, str)
+    end
+    if minutes == nil then
+        minutes = 0
+    else
+        minutes = minutes + 1
+    end
 end
-if GetStuckTime() > 1000 then
-    str = discordWebhook.createBody({
-        username = GetWEPWUser(),
-        content = "The Bot has been stuck for more than 1000 milliseconds.",
-        embed = discordWebhook.createEmbed({
-            title = "Stuck Status",
-            description = "The Bot has been stuck for more than 1000 milliseconds.",
-            color = 0xFFA500, -- Orange color
-            timestamp = discordWebhook.timestamp(os.time()),
-        })
-    })
-end
-discordWebhook.send("<Discord webhook URL here>", str)
+
+-- Replace your current logic with a call to sendDiscordStatus()
+sendDiscordStatus()
