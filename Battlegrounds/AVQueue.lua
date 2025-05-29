@@ -1,3 +1,4 @@
+-- Get Player info
 UseDBToRepair(false)
 Player = GetPlayer()
 entry = GetQueInfo1()
@@ -31,7 +32,7 @@ Whitewhisker = {11605, 11604, 11603, 10982} --Whitewhisker Gnolls
 Irondeep = {11602, 11600, 10987} --Irondeep Troggs
 
 -- Choose targets from the list above
-npcIDs = TableToList(AllianceNPCs)
+npcIDs = TableToList(Vanndar)
 
 -- List Battleground Masters and their IDs
 StormwindBattleMasterID = 7410
@@ -114,12 +115,14 @@ function MarkTurnIn()
             local MarkofHonor = 8387
             local MarkofHonorName = "Horde Warbringer"
         end --faction check
+        if Faction == "Horde" and ItemCount("Alterac Valley Mark of Honor") >= 3 then
+            QuestGoToPoint(1971.815, -4793.429, 56.76123, false, true)
+            QuestGoToPoint(1970.817, -4801.953, 56.76451, false, true)
+            QuestGoToPoint(1980.079, -4809.797, 56.76451, false, true)
+        end
         while ItemCount("Alterac Valley Mark of Honor") >= 3 do
-            if Faction == "Horde" then
-                QuestGoToPoint(1971.815, -4793.429, 56.76123, false, true)
-                QuestGoToPoint(1970.817, -4801.953, 56.76451, false, true)
-                QuestGoToPoint(1980.079, -4809.797, 56.76451, false, true)
-                Log("You have at least 3 Alterac Valley Mark of Honor, turning in quest.")
+            Log("You have at least 3 Alterac Valley Mark of Honor, turning in quest.")
+            if Faction == "Horde" and ItemCount("Alterac Valley Mark of Honor") >= 3 then
                 foreach unit in unitslist do
                     if unit:Name() == "Horde Warbringer" then
                         FindMeshPathToUnit(unit)
@@ -128,17 +131,11 @@ function MarkTurnIn()
                         InteractWithUnit(unit)
                         SleepPlugin(2000)
                     end -- turn in
-                end -- foreach
+                end -- for
             end -- if horde
-            if Faction == "Horde" then
-                QuestGoToPoint(1980.079, -4809.797, 56.76451, false, true)
-                QuestGoToPoint(1970.817, -4801.953, 56.76451, false, true)
-                QuestGoToPoint(1971.815, -4793.429, 56.76123, false, true)
-            end
             if Faction == "Alliance" then
                 QuestGoToPoint(-8440.335,312.7079,120.8858, false, true)
                 QuestGoToPoint(-8443.32,314.2846,120.8858, false, true)
-                QuestGoToPoint(-8441.301,314.1023,120.8858 false, true)
                 QuestGoToPoint(-8441.301,314.1023,120.8858, false, true)
                 foreach unit in unitslist do
                     if unit:Name() == "Alliance Brigadier General" then
@@ -148,9 +145,14 @@ function MarkTurnIn()
                         InteractWithUnit(unit)
                         SleepPlugin(2000)
                     end -- turn in
-                end -- foreach
+                end -- for
             end -- faction check
         end -- while
+--        if Faction == "Horde" and ItemCount("Alterac Valley Mark of Honor") < 3 then
+--            QuestGoToPoint(1980.079, -4809.797, 56.76451, false, true)
+--            QuestGoToPoint(1970.817, -4801.953, 56.76451, false, true)
+--            QuestGoToPoint(1971.815, -4793.429, 56.76123, false, true)
+--        end
     end -- if areaid
 end -- function
 
@@ -169,6 +171,7 @@ local function handleQueueState()
     elseif state == 4 or state == "Active" then
         SetBOTState("InBattleground")
         Log("In battleground, starting grind")
+        --discordWebhook.send("In battleground, starting grind")
         local startingPoint = {-1079.014, -225.1515, 60.34335}
         GrindAndGather(npcIDs, 10000, TableToFloatArray(startingPoint), false, "Override", false)
     elseif state == 2 or state == "Waiting" then
@@ -185,6 +188,7 @@ local function handleQueueState()
     elseif state == 0 or state == "None" then
         SetBOTState("NotInQue")
         Log("Queuing for Battleground")
+        SleepPlugin(5000)
         QuestGoToPoint(AVBMFloat[1], AVBMFloat[2], AVBMFloat[3], false, true)
         local unit = FindUnitByName(FactionBMName)
         if unit then
@@ -214,6 +218,7 @@ end
 function LeaveBG()
     if IsPvpComplete() == true then
         RunLua("/click WorldStateScoreFrameLeaveButton")
+        Log("Leaving Battleground")
     end
 end
 -- Start handling queue state
