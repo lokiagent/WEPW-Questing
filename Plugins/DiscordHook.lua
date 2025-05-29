@@ -6,7 +6,7 @@ Player = GetPlayer();
 -- Define the discordWebhook module
 local discordWebhook = {}
 -- Set the URL and avatar
-local url = "<Discord Webhook URL"
+local url = "<Discord Webhook URL>"
 local avatar = "https://img.freepik.com/free-vector/capybara-love-logo_7688-559.jpg"
 
 function discordWebhook.setURL(value)
@@ -274,13 +274,13 @@ $embedArray += $embedObject
     if method then
         script = script.."\n"..[[
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-Invoke-RestMethod -Uri $webHookUrl -Body ($payload | ConvertTo-Json -Depth 4) -Method Patch -ContentType 'application/json'              
-        ]]
+Invoke-RestMethod -Uri $webHookUrl -Body ($payload | ConvertTo-Json -Depth 4) -Method Patch -ContentType "application/json"
+    ]]
     else
         script = script.."\n"..[[
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-Invoke-RestMethod -Uri $webHookUrl -Body ($payload | ConvertTo-Json -Depth 4) -Method Post -ContentType 'application/json'      
-        ]]
+Invoke-RestMethod -Uri $webHookUrl -Body ($payload | ConvertTo-Json -Depth 4) -Method Post -ContentType "application/json"
+    ]]
     end
 
     local file = io.open("log.ps1", "w")
@@ -290,7 +290,7 @@ Invoke-RestMethod -Uri $webHookUrl -Body ($payload | ConvertTo-Json -Depth 4) -M
     --local pipe = io.popen("powershell -command -", "w")
     --pipe:write(script)
     --pipe:close()
-    os.execute("powershell.exe -ExecutionPolicy Bypass -File log.ps1")
+    os.execute("powershell.exe -ExecutionPolicy Bypass -NoExit -File log.ps1")
 end
 
 function sendDiscordStatus()
@@ -319,7 +319,7 @@ function sendDiscordStatus()
         })
     end
     -- Only send the default message every 10 minutes
-    if  minutes > 10 then
+    if  minutes >= 10 then
         str = discordWebhook.createBody({
             username = GetWEPWUser(),
             content = ("Current Player: %s, Level: %d"):format(Player.Name, Player.Level),
@@ -370,6 +370,9 @@ function sendDiscordStatus()
     else
         minutes = minutes + 1
     end
+    Log("Minutes until next status update: " .. (10 - minutes))
+    -- Reset the str variable to nil after sending
+    str = nil
 end
 
 -- Replace your current logic with a call to sendDiscordStatus()
