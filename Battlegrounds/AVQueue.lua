@@ -74,6 +74,8 @@ function Override()
     and Player:IsMounted() == false 
     and GetCurrentPathSize() > 5 
     and GetTargetUnit() == nil then
+        StopMoving()
+        SleepPlugin() --Wait for buffs or effects to wear off
         UseMacro("MountMe")
     end
     return true
