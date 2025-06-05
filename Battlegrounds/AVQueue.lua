@@ -70,10 +70,11 @@ function Override()
        GetAreaID() ~= 1459 then
         return false
     end
-    if Player:InCombat() == false 
+    while Player:InCombat() == false 
     and Player:IsMounted() == false 
     and GetCurrentPathSize() > 5 
-    and GetTargetUnit() == nil then
+    and GetTargetUnit() == nil do
+        StopMoving()
         UseMacro("MountMe")
     end
     return true
@@ -171,7 +172,18 @@ local function handleQueueState()
     elseif state == 4 or state == "Active" then
         SetBOTState("InBattleground")
         Log("In battleground, starting grind")
-        --discordWebhook.send("In battleground, starting grind")
+        local targetMessages = {
+            [Vanndar[1]] = "Go norf, kill dorf",
+            [Drek[1]] = "Go south, kill orc",
+            [HordeNPCs[1]] = "Go south, kill horde NPCs",
+            [AllianceNPCs[1]] = "Go north, kill alliance NPCs",
+            [Wildpaw[1]] = "Wildpaw Gnolls? Why aren't you rushing towers?",
+            [Snowblind[1]] = "Snowblind Harpies? Those are cursed boobies. No touch.",
+            [Whitewhisker[1]] = "Whitewhisker Gnolls? Why aren't you rushing towers?",
+            [Irondeep[1]] = "Irondeep Troggs? Why aren't you rushing towers?"
+        }
+        local targetMessage = targetMessages[GetTargetUnit()]
+        Log(targetMessage)
         local startingPoint = {-1079.014, -225.1515, 60.34335}
         GrindAndGather(npcIDs, 10000, TableToFloatArray(startingPoint), false, "Override", false)
     elseif state == 2 or state == "Waiting" then
@@ -213,6 +225,18 @@ local function handleQueueState()
         else
             Log("Error: " .. FactionBMName .. " not found.")
         end
+    elseif IsPvpComplete() == true then
+        SetBOTState("PvpComplete")
+        local Winner = GetPvpVictor()
+        if Winner == 0 then
+            Log("Horde has won the battleground.")
+        elseif Winner == 1 then
+            Log("Alliance has won the battleground.")
+        else
+            Log("No winner determined.")
+        end
+        Log("You have completed the battleground, leaving now.")
+        LeaveBG()
     end
 end
 function LeaveBG()
