@@ -117,14 +117,12 @@ function MarkTurnIn()
             local MarkofHonor = 8387
             local MarkofHonorName = "Horde Warbringer"
         end --faction check
-        if Faction == "Horde" and ItemCount("Alterac Valley Mark of Honor") >= 3 then
-            QuestGoToPoint(1971.815, -4793.429, 56.76123, false, true)
-            QuestGoToPoint(1970.817, -4801.953, 56.76451, false, true)
-            QuestGoToPoint(1980.079, -4809.797, 56.76451, false, true)
-        end
         while ItemCount("Alterac Valley Mark of Honor") >= 3 do
-            Log("You have at least 3 Alterac Valley Mark of Honor, turning in quest.")
-            if Faction == "Horde" and ItemCount("Alterac Valley Mark of Honor") >= 3 then
+            if Faction == "Horde" then
+                QuestGoToPoint(1971.815, -4793.429, 56.76123, false, true)
+                QuestGoToPoint(1970.817, -4801.953, 56.76451, false, true)
+                QuestGoToPoint(1980.079, -4809.797, 56.76451, false, true)
+                Log("You have at least 3 Alterac Valley Mark of Honor, turning in quest.")
                 foreach unit in unitslist do
                     if unit:Name() == "Horde Warbringer" then
                         FindMeshPathToUnit(unit)
@@ -133,12 +131,18 @@ function MarkTurnIn()
                         InteractWithUnit(unit)
                         SleepPlugin(2000)
                     end -- turn in
-                end -- for
+                end -- foreach
             end -- if horde
+            if Faction == "Horde" then
+                QuestGoToPoint(1980.079, -4809.797, 56.76451, false, true)
+                QuestGoToPoint(1970.817, -4801.953, 56.76451, false, true)
+                QuestGoToPoint(1971.815, -4793.429, 56.76123, false, true)
+            end
             if Faction == "Alliance" then
                 QuestGoToPoint(-8440.335,312.7079,120.8858, false, true)
                 QuestGoToPoint(-8443.32,314.2846,120.8858, false, true)
-                QuestGoToPoint(-8441.301,314.1023,120.8858, false, true)
+                QuestGoToPoint(-8441.301,314.1023,120.8858 false, true)
+                Log("You have at least 3 Alterac Valley Mark of Honor, turning in quest.")
                 foreach unit in unitslist do
                     if unit:Name() == "Alliance Brigadier General" then
                         FindMeshPathToUnit(unit)
@@ -147,14 +151,9 @@ function MarkTurnIn()
                         InteractWithUnit(unit)
                         SleepPlugin(2000)
                     end -- turn in
-                end -- for
+                end -- foreach
             end -- faction check
         end -- while
---        if Faction == "Horde" and ItemCount("Alterac Valley Mark of Honor") < 3 then
---            QuestGoToPoint(1980.079, -4809.797, 56.76451, false, true)
---            QuestGoToPoint(1970.817, -4801.953, 56.76451, false, true)
---            QuestGoToPoint(1971.815, -4793.429, 56.76123, false, true)
---        end
     end -- if areaid
 end -- function
 
