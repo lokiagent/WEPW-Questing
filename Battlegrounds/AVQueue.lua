@@ -21,6 +21,23 @@ BlackListPoint(307.8606,-400.1205,11.02554,20)
 BlackListPoint(644.9474,-357.7662,50.44614,20)
 BlackListPoint(650.5125,-354.4058,33.13669,20)
 BlackListPoint(654.9985,-355.9453,31.15319,20)
+-- Bunker blacklist points --
+BlackListPoint(678.37097167969,-137.13999938965,0,60) -- Dun Baldar North Bunker
+BlackListPoint(678.37097167969,-137.13999938965,0,60) -- Dun Baldar North Bunker
+BlackListPoint(557.84899902344,-88.28269958496,0,60) -- Dun Baldar South Bunker
+BlackListPoint(557.84899902344,-88.28269958496,0,60) -- Dun Baldar South Bunker
+BlackListPoint(209.10099792481,-367.83700561523,0,60) -- Icewing Bunker
+BlackListPoint(209.10099792481,-367.83700561523,0,60) -- Icewing Bunker
+BlackListPoint(-160.40299987793,-454.18301391602,0,60) -- Stonehearth Bunker
+BlackListPoint(-160.40299987793,-454.18301391602,0,60) -- Stonehearth Bunker
+BlackListPoint(-1301.4699707031,-307.24099731445,0,60) -- East Frostwolf Tower
+BlackListPoint(-1301.4699707031,-307.24099731445,0,60) -- East Frostwolf Tower
+BlackListPoint(-560.29998779297,-271.43899536133,0,60) -- Iceblood Tower
+BlackListPoint(-560.29998779297,-271.43899536133,0,60) -- Iceblood Tower
+BlackListPoint(-759.14099121094,-348.11999511719,0,60) -- Tower Point
+BlackListPoint(-759.14099121094,-348.11999511719,0,60) -- Tower Point
+BlackListPoint(-1297.9000244141,-266.6130065918,0,60) -- West Frostwolf Tower
+BlackListPoint(-1297.9000244141,-266.6130065918,0,60) -- West Frostwolf Tower
 -- Target options:
 Drek = {11946} --Drek'Thar
 Vanndar = {11948} --Vanndar Stormpike
