@@ -228,7 +228,7 @@ SetVendor()
 SellAtVendor()
 """
 
-def process_json(json_path):
+def process_json(json_path, base_folder, output_base):
     print(f"Processing {json_path}...")
     with open(json_path, 'r') as f:
         data = json.load(f)[0]
@@ -261,8 +261,6 @@ def process_json(json_path):
 
     # AutoSkin for GrindAndGatherPath
     autoskin = str(data.get('AutoSkin', False)).lower()
-
-    # Use default CombatRadius of 100 if not specified
     combat_radius = data.get('CombatRadius', 100)
 
     lua = (
@@ -286,16 +284,22 @@ def process_json(json_path):
         "SellAtVendor()\n"
     )
 
+    # Compute relative path and output path
+    rel_path = os.path.relpath(json_path, base_folder)
+    rel_dir = os.path.dirname(rel_path)
     base_name = os.path.splitext(os.path.basename(json_path))[0]
-    lua_path = os.path.join(os.path.dirname(json_path), f"{base_name}.lua")
+    output_dir = os.path.join(output_base, rel_dir)
+    os.makedirs(output_dir, exist_ok=True)
+    lua_path = os.path.join(output_dir, f"{base_name}.lua")
     print(f"Writing output to {lua_path}")
     with open(lua_path, 'w', encoding='utf-8') as f:
         f.write(lua)
 
 def main():
     folder = os.path.dirname(os.path.abspath(__file__))
-    for json_file in glob.glob(os.path.join(folder, "*.json")):
-        process_json(json_file)
+    output_base = os.path.join(folder, "Converted")
+    for json_file in glob.glob(os.path.join(folder, "**", "*.json"), recursive=True):
+        process_json(json_file, folder, output_base)
 
 if __name__ == "__main__":
     main()
