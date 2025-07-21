@@ -151,6 +151,7 @@ function SetVendor()
     Log("This isn't working!")
 end
 function SetFoodAndDrink()
+    -- Classes that don't need drink (no mana)
     if Player.Class == "Warrior" or Player.Class == "Rogue" then
         Drink = nil
     else
@@ -162,11 +163,22 @@ function SetFoodAndDrink()
         end
         SelectedDrink = bestDrink
     end
-    for i = 1, #Food do
-        if Food[i].level <= Player.Level then
-            SelectedFood = Food[i]
-        end
+
+    -- Classes that don't need food (can heal themselves)
+    if Player.Class == "Priest" or Player.Class == "Shaman" or Player.Class == "Paladin" or Player.Class == "Druid" then
+        Food = nil
     end
+
+    if Food ~= nil then
+        for i = 1, #Food do
+            if Food[i].level <= Player.Level then
+                SelectedFood = Food[i]
+            end
+        end
+    else
+        SelectedFood = nil
+    end
+
     if Drink == nil then
         print("No suitable drink found for your class.")
     else
@@ -186,7 +198,7 @@ function Override()
             return false
         end
     end
-    if SelectedFood ~= nil then
+    if SelectedFood ~= nil and Food ~= nil then
         if ItemCount(SelectedFood.name) < 5 then
             return false
         end
