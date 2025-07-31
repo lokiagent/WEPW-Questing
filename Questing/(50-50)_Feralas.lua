@@ -14,7 +14,6 @@ TurnInQuestUsingDB(3127);
 AcceptQuestUsingDB(3129); -- accept Weapons of Spirit
 TurnInQuestUsingDB(3129);
 AcceptQuestUsingDB(1173); -- accept Challenge Overlord Mok'Morokk
----- Obj Debug ---- .complete 1173,1
 CompleteObjectiveOfQuest(1173,1);
 TurnInQuestUsingDB(1173);
 AcceptQuestUsingDB(4502); -- accept Volcanic Activity
@@ -26,7 +25,6 @@ AcceptQuestUsingDB(7064); -- accept Corruption of Earth and Seed
 AcceptQuestUsingDB(7028); -- accept Twisted Evils
 AcceptQuestUsingDB(7067); -- accept The Pariah's Instructions
 AcceptQuestUsingDB(7044); -- accept Legend of Maraudon
----- Obj Debug ---- .complete 7029,2
 CompleteObjectiveOfQuest(7029,2);
 TurnInQuestUsingDB(7029);
 TurnInQuestUsingDB(7064);

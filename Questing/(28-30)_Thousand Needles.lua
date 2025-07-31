@@ -16,33 +16,23 @@ AcceptQuestUsingDB(4841); -- accept Pacify the Centaur
 TurnInQuestUsingDB(1196);
 AcceptQuestUsingDB(1197); -- accept The Sacred Flame
 AcceptQuestUsingDB(5147); -- accept Wanted - Arnak Grimtotem
----- Obj Debug ---- .complete 1197,1
 CompleteObjectiveOfQuest(1197,1);
----- Obj Debug ---- .complete 4841,1
 CompleteObjectiveOfQuest(4841,1);
----- Obj Debug ---- .complete 4841,2
 CompleteObjectiveOfQuest(4841,2);
----- Obj Debug ---- .complete 4841,3
 CompleteObjectiveOfQuest(4841,3);
 AcceptQuestUsingDB(1149); -- accept Test of Faith
 TurnInQuestUsingDB(1149);
----- Obj Debug ---- .complete 4821,1
 CompleteObjectiveOfQuest(4821,1);
----- Obj Debug ---- .complete 1153,1
 CompleteObjectiveOfQuest(1153,1);
 TurnInQuestUsingDB(4821);
 AcceptQuestUsingDB(4865); -- accept Serpent Wild
 TurnInQuestUsingDB(4841);
 AcceptQuestUsingDB(5064); -- accept Grimtotem Spying
 TurnInQuestUsingDB(1197);
----- Obj Debug ---- .complete 4767,1
 CompleteObjectiveOfQuest(4767,1);
 AcceptQuestUsingDB(4770); -- accept Homeward Bound
----- Obj Debug ---- .complete 4770,1
 CompleteObjectiveOfQuest(4770,1);
----- Obj Debug ---- .complete 4767,1
 CompleteObjectiveOfQuest(4767,1);
----- Obj Debug ---- .complete 1131,1
 CompleteObjectiveOfQuest(1131,1);
 AcceptQuestUsingDB(4881); -- accept Assassination Plot
 TurnInQuestUsingDB(4770);
@@ -50,10 +40,8 @@ TurnInQuestUsingDB(4865);
 AcceptQuestUsingDB(5062); -- accept Sacred Fire
 TurnInQuestUsingDB(4881);
 AcceptQuestUsingDB(4966); -- accept Protect Kanati Greycloud
----- Obj Debug ---- .complete 4966,1
 CompleteObjectiveOfQuest(4966,1);
 TurnInQuestUsingDB(4966);
----- Obj Debug ---- .complete 5062,1
 CompleteObjectiveOfQuest(5062,1);
 TurnInQuestUsingDB(1131);
 AcceptQuestUsingDB(1136); -- accept Frostmaw
@@ -61,20 +49,13 @@ TurnInQuestUsingDB(5062);
 AcceptQuestUsingDB(5088); -- accept Arikara
 TurnInQuestUsingDB(1153);
 TurnInQuestUsingDB(4767);
----- Obj Debug ---- .complete 5064,3
 CompleteObjectiveOfQuest(5064,3);
----- Obj Debug ---- .complete 5064,2
 CompleteObjectiveOfQuest(5064,2);
----- Obj Debug ---- .complete 5064,1
 CompleteObjectiveOfQuest(5064,1);
----- Obj Debug ---- .complete 5088,2
 CompleteObjectiveOfQuest(5088,2);
----- Obj Debug ---- .complete 5088,1
 CompleteObjectiveOfQuest(5088,1);
----- Obj Debug ---- .complete 5147,1
 CompleteObjectiveOfQuest(5147,1);
 AcceptQuestUsingDB(4904); -- accept Free at Last
----- Obj Debug ---- .complete 4904,1
 CompleteObjectiveOfQuest(4904,1);
 TurnInQuestUsingDB(5088);
 TurnInQuestUsingDB(5064);
@@ -94,7 +75,6 @@ TurnInQuestUsingDB(1145);
 AcceptQuestUsingDB(1146); -- accept The Swarm Grows
 AcceptQuestUsingDB(1431); -- accept Alliance Relations
 TurnInQuestUsingDB(1718);
----- Obj Debug ---- .complete 1719,2
 CompleteObjectiveOfQuest(1719,2);
 TurnInQuestUsingDB(1719);
 AcceptQuestUsingDB(2); -- accept Sharptalon's Claw

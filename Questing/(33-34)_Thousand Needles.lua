@@ -12,32 +12,19 @@ TurnInQuestUsingDB(1112);
 AcceptQuestUsingDB(1114); -- accept Delivery to the Gnomes
 TurnInQuestUsingDB(1114);
 AcceptQuestUsingDB(1115); -- accept The Rumormonger
----- Obj Debug ---- .complete 1175,3
 CompleteObjectiveOfQuest(1175,3);
----- Obj Debug ---- .complete 1147,3
 CompleteObjectiveOfQuest(1147,3);
----- Obj Debug ---- .complete 1147,1
 CompleteObjectiveOfQuest(1147,1);
----- Obj Debug ---- .complete 1147,2
 CompleteObjectiveOfQuest(1147,2);
 AcceptQuestUsingDB(1148); -- accept Parts of the Swarm
----- Obj Debug ---- .complete 1148,2
 CompleteObjectiveOfQuest(1148,2);
----- Obj Debug ---- .complete 1148,1
 CompleteObjectiveOfQuest(1148,1);
----- Obj Debug ---- .complete 1148,3
 CompleteObjectiveOfQuest(1148,3);
----- Obj Debug ---- .complete 1176,1
 CompleteObjectiveOfQuest(1176,1);
----- Obj Debug ---- .complete 1104,1
 CompleteObjectiveOfQuest(1104,1);
----- Obj Debug ---- .complete 1105,1
 CompleteObjectiveOfQuest(1105,1);
----- Obj Debug ---- .complete 1175,1
 CompleteObjectiveOfQuest(1175,1);
----- Obj Debug ---- .complete 1175,2
 CompleteObjectiveOfQuest(1175,2);
----- Obj Debug ---- .complete 1110,1
 CompleteObjectiveOfQuest(1110,1);
 TurnInQuestUsingDB(1110);
 AcceptQuestUsingDB(5762); -- accept Hemet Nesingwary
@@ -64,7 +51,6 @@ TurnInQuestUsingDB(1181);
 AcceptQuestUsingDB(1182); -- accept Goblin Sponsorship
 TurnInQuestUsingDB(2842);
 AcceptQuestUsingDB(2843); -- accept Gnomer-gooooone!
----- Obj Debug ---- .complete 2843,1
 CompleteObjectiveOfQuest(2843,1);
 TurnInQuestUsingDB(2843);
 TurnInQuestUsingDB(2904);

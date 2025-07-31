@@ -19,20 +19,15 @@ TurnInQuestUsingDB(1251);
 AcceptQuestUsingDB(1321); -- accept The Black Shield
 TurnInQuestUsingDB(1321);
 AcceptQuestUsingDB(1322); -- accept The Black Shield
----- Obj Debug ---- .complete 1201,1
 CompleteObjectiveOfQuest(1201,1);
 AcceptQuestUsingDB(1270); -- accept Stinky's Escape
----- Obj Debug ---- .complete 1270,1
 CompleteObjectiveOfQuest(1270,1);
 AcceptQuestUsingDB(1218); -- accept Soothing Spices
 TurnInQuestUsingDB(1218);
 AcceptQuestUsingDB(1206); -- accept Jarl Needs Eyes
 AcceptQuestUsingDB(1238); -- accept The Lost Report
----- Obj Debug ---- .complete 1177,1
 CompleteObjectiveOfQuest(1177,1);
----- Obj Debug ---- .complete 1206,1
 CompleteObjectiveOfQuest(1206,1);
----- Obj Debug ---- .complete 1322,1
 CompleteObjectiveOfQuest(1322,1);
 TurnInQuestUsingDB(1201);
 TurnInQuestUsingDB(1238);

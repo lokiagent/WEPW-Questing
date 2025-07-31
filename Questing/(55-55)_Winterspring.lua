@@ -11,14 +11,10 @@ TurnInQuestUsingDB(980);
 AcceptQuestUsingDB(4842); -- accept Strange Sources
 TurnInQuestUsingDB(3909);
 AcceptQuestUsingDB(3912); -- accept Meet at the Grave
----- Obj Debug ---- .complete 4521,2
 CompleteObjectiveOfQuest(4521,2);
----- Obj Debug ---- .complete 4521,1
 CompleteObjectiveOfQuest(4521,1);
 AcceptQuestUsingDB(3783); -- accept Are We There, Yeti?
----- Obj Debug ---- .complete 3783,1
 CompleteObjectiveOfQuest(3783,1);
----- Obj Debug ---- .complete 4842,1
 CompleteObjectiveOfQuest(4842,1);
 TurnInQuestUsingDB(3783);
 TurnInQuestUsingDB(3912);

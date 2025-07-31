@@ -9,29 +9,18 @@ AcceptQuestUsingDB(584); -- accept Bloodscalp Clan Heads
 TurnInQuestUsingDB(1240);
 AcceptQuestUsingDB(572); -- accept Mok'thardin's Enchantment
 AcceptQuestUsingDB(598); -- accept Split Bone Necklace
----- Obj Debug ---- .complete 584,1
 CompleteObjectiveOfQuest(584,1);
----- Obj Debug ---- .complete 584,2
 CompleteObjectiveOfQuest(584,2);
 TurnInQuestUsingDB(584);
 AcceptQuestUsingDB(585); -- accept Speaking with Nezzliok
----- Obj Debug ---- .complete 196,1
 CompleteObjectiveOfQuest(196,1);
----- Obj Debug ---- .complete 572,1
 CompleteObjectiveOfQuest(572,1);
----- Obj Debug ---- .complete 600,1
 CompleteObjectiveOfQuest(600,1);
----- Obj Debug ---- .complete 585,2
 CompleteObjectiveOfQuest(585,2);
----- Obj Debug ---- .complete 585,3
 CompleteObjectiveOfQuest(585,3);
----- Obj Debug ---- .complete 585,1
 CompleteObjectiveOfQuest(585,1);
----- Obj Debug ---- .complete 598,1
 CompleteObjectiveOfQuest(598,1);
----- Obj Debug ---- .complete 209,1
 CompleteObjectiveOfQuest(209,1);
----- Obj Debug ---- .complete 193,1
 CompleteObjectiveOfQuest(193,1);
 TurnInQuestUsingDB(572);
 TurnInQuestUsingDB(598);

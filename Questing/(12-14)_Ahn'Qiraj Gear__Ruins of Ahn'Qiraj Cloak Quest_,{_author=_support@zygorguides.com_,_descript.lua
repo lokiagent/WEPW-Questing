@@ -6,7 +6,6 @@ SetQuestSellAt(2);
 IgnoreLowLevelQuests(false);
 
 AcceptQuestUsingDB(435); -- accept Escorting Erland
----- Obj Debug ---- .complete 435,1
 CompleteObjectiveOfQuest(435,1);
 TurnInQuestUsingDB(435);
 AcceptQuestUsingDB(449); -- accept The Deathstalkers' Report
@@ -25,24 +24,17 @@ TurnInQuestUsingDB(3221);
 AcceptQuestUsingDB(1359); -- accept Zinge's Delivery
 TurnInQuestUsingDB(6321);
 AcceptQuestUsingDB(6323); -- accept Ride to the Undercity
----- Obj Debug ---- .complete 421,1
 CompleteObjectiveOfQuest(421,1);
 TurnInQuestUsingDB(421);
 AcceptQuestUsingDB(422); -- accept Arugal's Folly
----- Obj Debug ---- .complete 422,1
 CompleteObjectiveOfQuest(422,1);
 TurnInQuestUsingDB(430);
 AcceptQuestUsingDB(425); -- accept Ivar the Foul
----- Obj Debug ---- .complete 425,1
 CompleteObjectiveOfQuest(425,1);
 TurnInQuestUsingDB(425);
----- Obj Debug ---- .complete 437,2
 CompleteObjectiveOfQuest(437,2);
----- Obj Debug ---- .complete 437,1
 CompleteObjectiveOfQuest(437,1);
----- Obj Debug ---- .complete 447,1
 CompleteObjectiveOfQuest(447,1);
----- Obj Debug ---- .complete 447,2
 CompleteObjectiveOfQuest(447,2);
 TurnInQuestUsingDB(422);
 AcceptQuestUsingDB(423); -- accept Arugal's Folly
@@ -50,9 +42,7 @@ TurnInQuestUsingDB(437);
 AcceptQuestUsingDB(438); -- accept The Decrepit Ferry
 TurnInQuestUsingDB(438);
 AcceptQuestUsingDB(439); -- accept Rot Hide Clues
----- Obj Debug ---- .complete 423,2
 CompleteObjectiveOfQuest(423,2);
----- Obj Debug ---- .complete 423,1
 CompleteObjectiveOfQuest(423,1);
 TurnInQuestUsingDB(477);
 AcceptQuestUsingDB(478); -- accept Maps and Runes

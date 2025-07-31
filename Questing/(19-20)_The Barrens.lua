@@ -7,20 +7,13 @@ IgnoreLowLevelQuests(false);
 
 TurnInQuestUsingDB(3261);
 AcceptQuestUsingDB(882); -- accept Ishamuhale
----- Obj Debug ---- .complete 821,3
 CompleteObjectiveOfQuest(821,3);
----- Obj Debug ---- .complete 899,1
 CompleteObjectiveOfQuest(899,1);
----- Obj Debug ---- .complete 878,1
 CompleteObjectiveOfQuest(878,1);
----- Obj Debug ---- .complete 878,2
 CompleteObjectiveOfQuest(878,2);
----- Obj Debug ---- .complete 878,3
 CompleteObjectiveOfQuest(878,3);
 AcceptQuestUsingDB(883); -- accept Lakota'mani
----- Obj Debug ---- .complete 880,1
 CompleteObjectiveOfQuest(880,1);
----- Obj Debug ---- .complete 882,1
 CompleteObjectiveOfQuest(882,1);
 TurnInQuestUsingDB(888);
 TurnInQuestUsingDB(1094);
@@ -42,11 +35,9 @@ TurnInQuestUsingDB(5052);
 TurnInQuestUsingDB(882);
 AcceptQuestUsingDB(907); -- accept Enraged Thunder Lizards
 TurnInQuestUsingDB(883);
----- Obj Debug ---- .complete 907,1
 CompleteObjectiveOfQuest(907,1);
 TurnInQuestUsingDB(907);
 AcceptQuestUsingDB(913); -- accept Cry of the Thunderhawk
----- Obj Debug ---- .complete 913,1
 CompleteObjectiveOfQuest(913,1);
 TurnInQuestUsingDB(913);
 AcceptQuestUsingDB(874); -- accept Mahren Skyseer
@@ -62,10 +53,8 @@ AcceptQuestUsingDB(914); -- accept Leaders of the Fang
 TurnInQuestUsingDB(1507);
 TurnInQuestUsingDB(1508);
 TurnInQuestUsingDB(1509);
----- Obj Debug ---- .complete 852,1
 CompleteObjectiveOfQuest(852,1);
 TurnInQuestUsingDB(852);
----- Obj Debug ---- .complete 876,1
 CompleteObjectiveOfQuest(876,1);
 TurnInQuestUsingDB(1062);
 AcceptQuestUsingDB(1063); -- accept The Elder Crone

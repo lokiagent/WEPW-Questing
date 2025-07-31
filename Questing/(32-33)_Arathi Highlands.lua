@@ -5,15 +5,10 @@ SetQuestRepairAt(30);
 SetQuestSellAt(2);
 IgnoreLowLevelQuests(false);
 
----- Obj Debug ---- .complete 676,2
 CompleteObjectiveOfQuest(676,2);
----- Obj Debug ---- .complete 676,1
 CompleteObjectiveOfQuest(676,1);
----- Obj Debug ---- .complete 1164,2
 CompleteObjectiveOfQuest(1164,2);
----- Obj Debug ---- .complete 1164,3
 CompleteObjectiveOfQuest(1164,3);
----- Obj Debug ---- .complete 1164,1
 CompleteObjectiveOfQuest(1164,1);
 TurnInQuestUsingDB(676);
 AcceptQuestUsingDB(677); -- accept Call to Arms
@@ -21,15 +16,10 @@ AcceptQuestUsingDB(655); -- accept Hammerfall
 TurnInQuestUsingDB(655);
 AcceptQuestUsingDB(672); -- accept Raising Spirits
 AcceptQuestUsingDB(671); -- accept Foul Magics
----- Obj Debug ---- .complete 677,2
 CompleteObjectiveOfQuest(677,2);
----- Obj Debug ---- .complete 677,1
 CompleteObjectiveOfQuest(677,1);
----- Obj Debug ---- .complete 677,3
 CompleteObjectiveOfQuest(677,3);
----- Obj Debug ---- .complete 671,1
 CompleteObjectiveOfQuest(671,1);
----- Obj Debug ---- .complete 672,1
 CompleteObjectiveOfQuest(672,1);
 TurnInQuestUsingDB(671);
 TurnInQuestUsingDB(672);

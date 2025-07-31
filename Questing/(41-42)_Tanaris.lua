@@ -11,14 +11,11 @@ TurnInQuestUsingDB(243);
 AcceptQuestUsingDB(379); -- accept Slake That Thirst
 AcceptQuestUsingDB(1690); -- accept Wastewander Justice
 AcceptQuestUsingDB(992); -- accept Gadgetzan Water Survey
----- Obj Debug ---- .complete 992,1
 CompleteObjectiveOfQuest(992,1);
 TurnInQuestUsingDB(992);
 AcceptQuestUsingDB(3520); -- accept Screecher Spirits
 TurnInQuestUsingDB(2872);
----- Obj Debug ---- .complete 1690,1
 CompleteObjectiveOfQuest(1690,1);
----- Obj Debug ---- .complete 1690,2
 CompleteObjectiveOfQuest(1690,2);
 TurnInQuestUsingDB(379);
 TurnInQuestUsingDB(1690);

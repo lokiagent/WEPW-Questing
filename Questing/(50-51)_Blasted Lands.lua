@@ -7,11 +7,9 @@ IgnoreLowLevelQuests(false);
 
 AcceptQuestUsingDB(2623); -- accept The Swamp Talker
 TurnInQuestUsingDB(1444);
----- Obj Debug ---- .complete 2623,1
 CompleteObjectiveOfQuest(2623,1);
 TurnInQuestUsingDB(2623);
 AcceptQuestUsingDB(2801); -- accept A Tale of Sorrow
----- Obj Debug ---- .complete 2801,1
 CompleteObjectiveOfQuest(2801,1);
 TurnInQuestUsingDB(2801);
 AcceptQuestUsingDB(2581); -- accept Snickerfang Jowls

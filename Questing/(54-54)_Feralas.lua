@@ -6,7 +6,6 @@ SetQuestSellAt(2);
 IgnoreLowLevelQuests(false);
 
 TurnInQuestUsingDB(4120);
----- Obj Debug ---- .complete 3909,1
 CompleteObjectiveOfQuest(3909,1);
 AcceptQuestUsingDB(3762); -- accept Assisting Arch Druid Runetotem
 AcceptQuestUsingDB(1000); -- accept The New Frontier
