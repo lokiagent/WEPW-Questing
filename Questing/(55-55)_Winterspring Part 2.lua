@@ -7,11 +7,11 @@ IgnoreLowLevelQuests(false);
 
 TurnInQuestUsingDB(4842);
 TurnInQuestUsingDB(5086);
-AcceptQuestUsingDB(5087);
+AcceptQuestUsingDB(5087); -- accept Winterfall Runners
 ---- Obj Debug ---- .complete 5087,1
 CompleteObjectiveOfQuest(5087,1);
 TurnInQuestUsingDB(5087);
 TurnInQuestUsingDB(4084);
-AcceptQuestUsingDB(4005);
+AcceptQuestUsingDB(4005); -- accept Aquementas
 TurnInQuestUsingDB(3507);
 StopQuestProfile();

@@ -5,13 +5,13 @@ SetQuestRepairAt(30);
 SetQuestSellAt(2);
 IgnoreLowLevelQuests(false);
 
-AcceptQuestUsingDB(879);
-AcceptQuestUsingDB(893);
-AcceptQuestUsingDB(884);
+AcceptQuestUsingDB(879); -- accept Betrayal from Within
+AcceptQuestUsingDB(893); -- accept Weapons of Choice
+AcceptQuestUsingDB(884); -- accept Owatanka
 ---- Obj Debug ---- .complete 868,1
 CompleteObjectiveOfQuest(868,1);
-AcceptQuestUsingDB(897);
-AcceptQuestUsingDB(843);
+AcceptQuestUsingDB(897); -- accept The Harvester
+AcceptQuestUsingDB(843); -- accept Gann's Reclamation
 TurnInQuestUsingDB(1536);
 ---- Obj Debug ---- .complete 822,3
 CompleteObjectiveOfQuest(822,3);
@@ -27,7 +27,7 @@ CompleteObjectiveOfQuest(893,1);
 CompleteObjectiveOfQuest(893,2);
 ---- Obj Debug ---- .complete 893,3
 CompleteObjectiveOfQuest(893,3);
-AcceptQuestUsingDB(885);
+AcceptQuestUsingDB(885); -- accept Washte Pawne
 ---- Obj Debug ---- .complete 843,3
 CompleteObjectiveOfQuest(843,3);
 ---- Obj Debug ---- .complete 843,1
@@ -35,7 +35,7 @@ CompleteObjectiveOfQuest(843,1);
 ---- Obj Debug ---- .complete 843,2
 CompleteObjectiveOfQuest(843,2);
 TurnInQuestUsingDB(843);
-AcceptQuestUsingDB(846);
+AcceptQuestUsingDB(846); -- accept Revenge of Gann
 ---- Obj Debug ---- .complete 846,1
 CompleteObjectiveOfQuest(846,1);
 ---- Obj Debug ---- .complete 846,2
@@ -43,7 +43,7 @@ CompleteObjectiveOfQuest(846,2);
 ---- Obj Debug ---- .complete 846,3
 CompleteObjectiveOfQuest(846,3);
 TurnInQuestUsingDB(846);
-AcceptQuestUsingDB(849);
+AcceptQuestUsingDB(849); -- accept Revenge of Gann
 ---- Obj Debug ---- .complete 849,1
 CompleteObjectiveOfQuest(849,1);
 TurnInQuestUsingDB(849);
@@ -55,14 +55,14 @@ TurnInQuestUsingDB(893);
 TurnInQuestUsingDB(884);
 TurnInQuestUsingDB(885);
 TurnInQuestUsingDB(897);
-AcceptQuestUsingDB(6382);
+AcceptQuestUsingDB(6382); -- accept The Ashenvale Hunt
 TurnInQuestUsingDB(879);
-AcceptQuestUsingDB(906);
+AcceptQuestUsingDB(906); -- accept Betrayal from Within
 TurnInQuestUsingDB(906);
 TurnInQuestUsingDB(868);
 TurnInQuestUsingDB(822);
 TurnInQuestUsingDB(874);
-AcceptQuestUsingDB(873);
+AcceptQuestUsingDB(873); -- accept Isha Awak
 ---- Obj Debug ---- .complete 873,1
 CompleteObjectiveOfQuest(873,1);
 TurnInQuestUsingDB(873);

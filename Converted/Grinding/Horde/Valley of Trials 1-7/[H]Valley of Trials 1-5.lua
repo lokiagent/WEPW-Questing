@@ -221,11 +221,6 @@ function SellAtVendor()
     end
 end
 
-SetFoodAndDrink()
---Grind and Gather goes here--
-SetVendor()
-SellAtVendor()
-
 local Waypoints = {
     {-543.69574,-4285.553,37.4729424},
     {-398.0295,-4311.256,43.8528938}

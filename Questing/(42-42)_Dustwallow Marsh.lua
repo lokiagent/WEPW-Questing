@@ -5,16 +5,16 @@ SetQuestRepairAt(30);
 SetQuestSellAt(2);
 IgnoreLowLevelQuests(false);
 
-AcceptQuestUsingDB(1166);
-AcceptQuestUsingDB(1169);
-AcceptQuestUsingDB(1168);
+AcceptQuestUsingDB(1166); -- accept Overlord Mok'Morokk's Concern
+AcceptQuestUsingDB(1169); -- accept Identifying the Brood
+AcceptQuestUsingDB(1168); -- accept Army of the Black Dragon
 ---- Obj Debug ---- .complete 1205,1
 CompleteObjectiveOfQuest(1205,1);
 ---- Obj Debug ---- .complete 1187,1
 CompleteObjectiveOfQuest(1187,1);
 ---- Obj Debug ---- .complete 1261,1
 CompleteObjectiveOfQuest(1261,1);
-AcceptQuestUsingDB(2846);
+AcceptQuestUsingDB(2846); -- accept Tiara of the Deep
 ---- Obj Debug ---- .complete 1166,1
 CompleteObjectiveOfQuest(1166,1);
 ---- Obj Debug ---- .complete 1166,2
@@ -32,12 +32,12 @@ CompleteObjectiveOfQuest(1169,1);
 ---- Obj Debug ---- .complete 1169,2
 CompleteObjectiveOfQuest(1169,2);
 TurnInQuestUsingDB(1169);
-AcceptQuestUsingDB(1170);
+AcceptQuestUsingDB(1170); -- accept The Brood of Onyxia
 TurnInQuestUsingDB(1168);
 TurnInQuestUsingDB(1170);
-AcceptQuestUsingDB(1171);
+AcceptQuestUsingDB(1171); -- accept The Brood of Onyxia
 TurnInQuestUsingDB(1166);
 TurnInQuestUsingDB(1171);
 TurnInQuestUsingDB(1261);
-AcceptQuestUsingDB(1262);
+AcceptQuestUsingDB(1262); -- accept Report to Zor
 StopQuestProfile();

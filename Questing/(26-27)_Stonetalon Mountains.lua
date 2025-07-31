@@ -5,14 +5,14 @@ SetQuestRepairAt(30);
 SetQuestSellAt(2);
 IgnoreLowLevelQuests(false);
 
-AcceptQuestUsingDB(1087);
-AcceptQuestUsingDB(6301);
-AcceptQuestUsingDB(5881);
-AcceptQuestUsingDB(6282);
-AcceptQuestUsingDB(6284);
+AcceptQuestUsingDB(1087); -- accept Cenarius' Legacy
+AcceptQuestUsingDB(6301); -- accept Cycle of Rebirth
+AcceptQuestUsingDB(5881); -- accept Calling in the Reserves
+AcceptQuestUsingDB(6282); -- accept Harpies Threaten
+AcceptQuestUsingDB(6284); -- accept Arachnophobia
 ---- Obj Debug ---- .complete 6284,1
 CompleteObjectiveOfQuest(6284,1);
-AcceptQuestUsingDB(1096);
+AcceptQuestUsingDB(1096); -- accept Gerenzo Wrenchwhistle
 ---- Obj Debug ---- .complete 1086,1
 CompleteObjectiveOfQuest(1086,1);
 ---- Obj Debug ---- .complete 1096,1
@@ -44,10 +44,10 @@ CompleteObjectiveOfQuest(6282,3);
 CompleteObjectiveOfQuest(6282,4);
 TurnInQuestUsingDB(1087);
 TurnInQuestUsingDB(6282);
-AcceptQuestUsingDB(6283);
+AcceptQuestUsingDB(6283); -- accept Bloodfury Bloodline
 TurnInQuestUsingDB(6284);
 TurnInQuestUsingDB(6301);
-AcceptQuestUsingDB(6381);
+AcceptQuestUsingDB(6381); -- accept New Life
 ---- Obj Debug ---- .complete 6283,1
 CompleteObjectiveOfQuest(6283,1);
 ---- Obj Debug ---- .complete 6381,1

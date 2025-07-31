@@ -5,28 +5,28 @@ SetQuestRepairAt(30);
 SetQuestSellAt(2);
 IgnoreLowLevelQuests(false);
 
-AcceptQuestUsingDB(571);
-AcceptQuestUsingDB(586);
+AcceptQuestUsingDB(571); -- accept Mok'thardin's Enchantment
+AcceptQuestUsingDB(586); -- accept Speaking with Gan'zulah
 ---- Obj Debug ---- .complete 197,1
 CompleteObjectiveOfQuest(197,1);
 ---- Obj Debug ---- .complete 193,1
 CompleteObjectiveOfQuest(193,1);
 TurnInQuestUsingDB(197);
 TurnInQuestUsingDB(193);
-AcceptQuestUsingDB(617);
+AcceptQuestUsingDB(617); -- accept Akiris by the Bundle
 TurnInQuestUsingDB(1118);
-AcceptQuestUsingDB(621);
+AcceptQuestUsingDB(621); -- accept Zanzil's Secret
 TurnInQuestUsingDB(628);
-AcceptQuestUsingDB(606);
-AcceptQuestUsingDB(595);
+AcceptQuestUsingDB(606); -- accept Scaring Shaky
+AcceptQuestUsingDB(595); -- accept The Bloodsail Buccaneers
 TurnInQuestUsingDB(595);
-AcceptQuestUsingDB(597);
+AcceptQuestUsingDB(597); -- accept The Bloodsail Buccaneers
 TurnInQuestUsingDB(597);
-AcceptQuestUsingDB(599);
-AcceptQuestUsingDB(587);
+AcceptQuestUsingDB(599); -- accept The Bloodsail Buccaneers
+AcceptQuestUsingDB(587); -- accept Up to Snuff
 TurnInQuestUsingDB(599);
-AcceptQuestUsingDB(604);
-AcceptQuestUsingDB(576);
+AcceptQuestUsingDB(604); -- accept The Bloodsail Buccaneers
+AcceptQuestUsingDB(576); -- accept Keep An Eye Out
 ---- Obj Debug ---- .complete 604,2
 CompleteObjectiveOfQuest(604,2);
 ---- Obj Debug ---- .complete 604,3
@@ -43,14 +43,14 @@ CompleteObjectiveOfQuest(571,1);
 CompleteObjectiveOfQuest(606,1);
 TurnInQuestUsingDB(576);
 TurnInQuestUsingDB(606);
-AcceptQuestUsingDB(607);
+AcceptQuestUsingDB(607); -- accept Return to MacKinley
 TurnInQuestUsingDB(607);
-AcceptQuestUsingDB(609);
+AcceptQuestUsingDB(609); -- accept Voodoo Dues
 TurnInQuestUsingDB(587);
 TurnInQuestUsingDB(604);
-AcceptQuestUsingDB(608);
+AcceptQuestUsingDB(608); -- accept The Bloodsail Buccaneers
 TurnInQuestUsingDB(571);
-AcceptQuestUsingDB(573);
+AcceptQuestUsingDB(573); -- accept Mok'thardin's Enchantment
 ---- Obj Debug ---- .complete 573,2
 CompleteObjectiveOfQuest(573,2);
 ---- Obj Debug ---- .complete 617,1
@@ -74,7 +74,7 @@ CompleteObjectiveOfQuest(586,3);
 ---- Obj Debug ---- .complete 586,2
 CompleteObjectiveOfQuest(586,2);
 TurnInQuestUsingDB(586);
-AcceptQuestUsingDB(588);
+AcceptQuestUsingDB(588); -- accept The Fate of Yenniku
 TurnInQuestUsingDB(588);
 TurnInQuestUsingDB(573);
 TurnInQuestUsingDB(621);
@@ -86,7 +86,7 @@ CompleteObjectiveOfQuest(608,2);
 CompleteObjectiveOfQuest(608,3);
 ---- Obj Debug ---- .complete 608,1
 CompleteObjectiveOfQuest(608,1);
-AcceptQuestUsingDB(624);
-AcceptQuestUsingDB(580);
+AcceptQuestUsingDB(624); -- accept Cortello's Riddle
+AcceptQuestUsingDB(580); -- accept Whiskey Slim's Lost Grog
 TurnInQuestUsingDB(608);
 StopQuestProfile();

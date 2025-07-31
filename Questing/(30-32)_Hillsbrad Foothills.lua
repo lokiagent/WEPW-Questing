@@ -5,11 +5,11 @@ SetQuestRepairAt(30);
 SetQuestSellAt(2);
 IgnoreLowLevelQuests(false);
 
-AcceptQuestUsingDB(1164);
+AcceptQuestUsingDB(1164); -- accept To Steal From Thieves
 TurnInQuestUsingDB(63);
 TurnInQuestUsingDB(100);
-AcceptQuestUsingDB(509);
-AcceptQuestUsingDB(676);
+AcceptQuestUsingDB(509); -- accept Elixir of Agony
+AcceptQuestUsingDB(676); -- accept The Hammer May Fall
 ---- Obj Debug ---- .complete 529,3
 CompleteObjectiveOfQuest(529,3);
 ---- Obj Debug ---- .complete 529,1
@@ -17,18 +17,18 @@ CompleteObjectiveOfQuest(529,1);
 ---- Obj Debug ---- .complete 529,2
 CompleteObjectiveOfQuest(529,2);
 TurnInQuestUsingDB(529);
-AcceptQuestUsingDB(532);
-AcceptQuestUsingDB(7321);
-AcceptQuestUsingDB(533);
-AcceptQuestUsingDB(552);
+AcceptQuestUsingDB(532); -- accept Battle of Hillsbrad
+AcceptQuestUsingDB(7321); -- accept Soothing Turtle Bisque
+AcceptQuestUsingDB(533); -- accept Infiltration
+AcceptQuestUsingDB(552); -- accept Helcular's Revenge
 TurnInQuestUsingDB(1791);
 ---- Obj Debug ---- .complete 7321,1
 CompleteObjectiveOfQuest(7321,1);
 ---- Obj Debug ---- .complete 7321,2
 CompleteObjectiveOfQuest(7321,2);
 TurnInQuestUsingDB(7321);
-AcceptQuestUsingDB(544);
-AcceptQuestUsingDB(556);
+AcceptQuestUsingDB(544); -- accept Prison Break In
+AcceptQuestUsingDB(556); -- accept Stone Tokens
 ---- Obj Debug ---- .complete 552,1
 CompleteObjectiveOfQuest(552,1);
 ---- Obj Debug ---- .complete 567,1
@@ -42,9 +42,9 @@ CompleteObjectiveOfQuest(532,4);
 ---- Obj Debug ---- .complete 532,2
 CompleteObjectiveOfQuest(532,2);
 TurnInQuestUsingDB(532);
-AcceptQuestUsingDB(539);
+AcceptQuestUsingDB(539); -- accept Battle of Hillsbrad
 TurnInQuestUsingDB(552);
-AcceptQuestUsingDB(553);
+AcceptQuestUsingDB(553); -- accept Helcular's Revenge
 ---- Obj Debug ---- .complete 553,2
 CompleteObjectiveOfQuest(553,2);
 ---- Obj Debug ---- .complete 553,1
