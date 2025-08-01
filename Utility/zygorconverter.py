@@ -88,10 +88,15 @@ for guide in guides:
         if not line:
             continue
 
-        # Check if the current line or the next line is class-specific
+        # Check if the current line contains class-specific conditions or SoD conditions
+        if any(condition in line for condition in class_conditions) or "ZGV.IsClassicSoD" in line:
+            print(f"Skipping class-specific or SoD line: {line}")
+            continue
+
+        # Check if the next line is class-specific or SoD
         next_line = lines[i + 1].strip() if i + 1 < len(lines) else ""
-        if any(condition in next_line for condition in class_conditions):
-            print(f"Skipping class-specific block due to condition: {next_line}")
+        if any(condition in next_line for condition in class_conditions) or "ZGV.IsClassicSoD" in next_line:
+            print(f"Skipping class-specific or SoD block due to condition: {next_line}")
             skip_class_specific = True
             continue
 
